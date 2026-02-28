@@ -3,6 +3,7 @@
 *:before {
   box-sizing: border-box;
 }
+
 :root {
   --transition: 0.2;
   --bg-one: #0f0514;
@@ -13,6 +14,7 @@
   --padlock-size: 300;
   --border-radius: 6;
 }
+
 body {
   align-items: center;
   display: flex;
@@ -29,6 +31,7 @@ form {
   justify-items: center;
   position: relative;
 }
+
 [type='password'] {
   padding: 12px 20px;
   font-size: 1rem;
@@ -41,21 +44,27 @@ form {
   width: 100%;
   transition: border-color calc(var(--transition, 0.2) * 1s) ease;
 }
+
 [type='password']:valid {
   --accent: #5f0;
 }
+
 [type='password']:invalid {
-  --accent: rgba(255,43,0,0.5);
+  --accent: rgba(255, 43, 0, 0.5);
 }
+
 [type='password']:-moz-placeholder-shown {
   --accent: #fff;
 }
+
 [type='password']:-ms-input-placeholder {
   --accent: #fff;
 }
+
 [type='password']:placeholder-shown {
   --accent: #fff;
 }
+
 .app {
   height: 100vh;
   width: 100vw;
@@ -70,6 +79,7 @@ form {
   transform: scale(var(--scale));
   transition: transform calc(var(--transition, 0.2) * 1s) ease;
 }
+
 [for='password'],
 #login {
   height: 0;
@@ -77,6 +87,7 @@ form {
   transform: scale(0);
   position: absolute;
 }
+
 .logout-button {
   --size: 52;
   --lightness: 45;
@@ -90,12 +101,15 @@ form {
   border-radius: calc(var(--border-radius) * 1px);
   cursor: pointer;
 }
+
 .logout-button:hover {
   --lightness: 30;
 }
+
 .logout-button:active {
   --lightness: 20;
 }
+
 .login-button {
   --size: 52;
   --lightness: 45;
@@ -113,25 +127,32 @@ form {
   width: 100%;
   transition: background calc(var(--transition, 0.2) * 1s) ease;
 }
+
 .login-button svg {
   transform: translate(50%, 0);
 }
+
 .login-button * {
   cursor: pointer;
 }
+
 .login-button:hover {
   --lightness: 30;
 }
+
 .login-button:active {
   --lightness: 20;
 }
+
 .login-button svg {
   height: 24px;
   width: 24px;
 }
+
 .login-button svg path {
   fill: #fff;
 }
+
 .padlock {
   --hue: 65;
   --color: #ffd500;
@@ -142,6 +163,7 @@ form {
   grid-row: 1;
   position: relative;
 }
+
 .padlock__body {
   border: 8px solid #000;
   border-radius: 20px;
@@ -154,6 +176,7 @@ form {
   background: var(--color);
   box-shadow: -30px 0 0px 0px var(--color-one) inset, 10px 0 0px 0px var(--color-two) inset;
 }
+
 .padlock__face {
   height: 25%;
   width: 40%;
@@ -162,6 +185,7 @@ form {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
 .padlock__eye {
   position: absolute;
   height: 15px;
@@ -170,8 +194,9 @@ form {
   top: 0;
   border-radius: 50%;
   -webkit-animation: blink 4s infinite linear;
-          animation: blink 4s infinite linear;
+  animation: blink 4s infinite linear;
 }
+
 .padlock__eye:after {
   content: '';
   height: 25%;
@@ -183,28 +208,45 @@ form {
   left: 50%;
   transform: translate(-100%, -100%);
 }
+
 .padlock__eye--left {
   left: 0;
 }
+
 .padlock__eye--right {
   right: 0;
 }
+
 @-webkit-keyframes blink {
-  0%, 24%, 27%, 100% {
+
+  0%,
+  24%,
+  27%,
+  100% {
     transform: scaleY(1);
   }
-  25%, 26% {
+
+  25%,
+  26% {
     transform: scaleY(0);
   }
 }
+
 @keyframes blink {
-  0%, 24%, 27%, 100% {
+
+  0%,
+  24%,
+  27%,
+  100% {
     transform: scaleY(1);
   }
-  25%, 26% {
+
+  25%,
+  26% {
     transform: scaleY(0);
   }
 }
+
 .padlock__mouth {
   width: 25%;
   height: 10px;
@@ -213,6 +255,7 @@ form {
   left: 50%;
   transform: translate(-50%, 0);
 }
+
 .padlock__mouth--one {
   background: #000;
   height: 5px;
@@ -221,6 +264,7 @@ form {
   bottom: 25%;
   display: block;
 }
+
 .padlock__mouth--two,
 .padlock__mouth--three {
   height: 24px;
@@ -233,6 +277,7 @@ form {
   display: none;
   overflow: hidden;
 }
+
 .padlock__mouth--two:before,
 .padlock__mouth--three:before {
   content: '';
@@ -244,9 +289,11 @@ form {
   border-radius: 50%;
   border: 4px solid #000;
 }
+
 .padlock__mouth--three {
   background: #000;
 }
+
 .padlock__mouth--three:after {
   content: '';
   position: absolute;
@@ -257,6 +304,7 @@ form {
   left: 40%;
   background: #f00;
 }
+
 .padlock__hook {
   --delay: 1;
   --clip: 40;
@@ -270,6 +318,7 @@ form {
   clip-path: inset(0 0 30% 0);
   transition: transform calc(var(--transition, 0.2) * 1s) calc(((var(--transition, 0.2) * 1.5) * var(--delay, 0)) * 1s) cubic-bezier(0.78, 0.16, 0.64, 1.8);
 }
+
 .padlock__hook:after {
   content: '';
   position: absolute;
@@ -283,13 +332,15 @@ form {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(var(--clip) * 1%), 50% calc(var(--clip) * 1%), 50% 100%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(var(--clip) * 1%), 50% calc(var(--clip) * 1%), 50% 100%, 0 100%);
 }
-.padlock__hook > div {
+
+.padlock__hook>div {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.padlock__hook > div:nth-of-type(1) {
+
+.padlock__hook>div:nth-of-type(1) {
   width: 100%;
   height: 100%;
   border: 36px solid #000;
@@ -297,7 +348,8 @@ form {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(calc(var(--clip) * 1%) + 8px), 50% calc(calc(var(--clip) * 1%) + 8px), 50% 100%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(calc(var(--clip) * 1%) + 8px), 50% calc(calc(var(--clip) * 1%) + 8px), 50% 100%, 0 100%);
 }
-.padlock__hook > div:nth-of-type(2) {
+
+.padlock__hook>div:nth-of-type(2) {
   width: calc(100% - 16px);
   height: calc(100% - 16px);
   border: 20px solid #bfbfbf;
@@ -305,6 +357,7 @@ form {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(var(--clip) * 1%), 50% calc(var(--clip) * 1%), 50% 100%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% calc(var(--clip) * 1%), 50% calc(var(--clip) * 1%), 50% 100%, 0 100%);
 }
+
 .logout-message {
   display: block;
   width: 100%;
@@ -314,53 +367,66 @@ form {
   text-align: center;
   font-weight: bold;
 }
-#login:checked ~ .app {
+
+#login:checked~.app {
   --scale: 1;
 }
-[type='password']:valid ~ #login,
-[type='password']:valid ~ [for='login'] {
+
+[type='password']:valid~#login,
+[type='password']:valid~[for='login'] {
   visibility: visible;
 }
-[type='password']:valid ~ #login:hover ~ .padlock .padlock__mouth--one,
-[type='password']:valid ~ [for='login']:hover ~ .padlock .padlock__mouth--one,
-[type='password']:valid ~ #login:hover ~ .padlock .padlock__mouth--two,
-[type='password']:valid ~ [for='login']:hover ~ .padlock .padlock__mouth--two {
+
+[type='password']:valid~#login:hover~.padlock .padlock__mouth--one,
+[type='password']:valid~[for='login']:hover~.padlock .padlock__mouth--one,
+[type='password']:valid~#login:hover~.padlock .padlock__mouth--two,
+[type='password']:valid~[for='login']:hover~.padlock .padlock__mouth--two {
   display: none;
 }
-[type='password']:valid ~ #login:hover ~ .padlock .padlock__mouth--three,
-[type='password']:valid ~ [for='login']:hover ~ .padlock .padlock__mouth--three {
+
+[type='password']:valid~#login:hover~.padlock .padlock__mouth--three,
+[type='password']:valid~[for='login']:hover~.padlock .padlock__mouth--three {
   display: block;
 }
-[type='password']:valid ~ .padlock .padlock__mouth--one {
+
+[type='password']:valid~.padlock .padlock__mouth--one {
   display: none;
 }
-[type='password']:valid ~ .padlock .padlock__mouth--two {
+
+[type='password']:valid~.padlock .padlock__mouth--two {
   display: block;
 }
-[type='password']:valid ~ .padlock .padlock__hook {
+
+[type='password']:valid~.padlock .padlock__hook {
   --pos: 60;
   --delay: 0;
 }
-[type='password']:-moz-placeholder-shown ~ .app {
+
+[type='password']:-moz-placeholder-shown~.app {
   -moz-transition: transform 0s 0s ease;
   transition: transform 0s 0s ease;
 }
-[type='password']:-ms-input-placeholder ~ .app {
+
+[type='password']:-ms-input-placeholder~.app {
   -ms-transition: transform 0s 0s ease;
   transition: transform 0s 0s ease;
 }
-[type='password']:placeholder-shown ~ .app {
+
+[type='password']:placeholder-shown~.app {
   transition: transform 0s 0s ease;
 }
-.app:focus-within ~ .logout-message {
+
+.app:focus-within~.logout-message {
   visibility: visible;
   grid-row: 3;
 }
+
 #login,
 [for='login'],
 .logout-message {
   visibility: hidden;
 }
+
 .app {
   --scale: 0;
 }
